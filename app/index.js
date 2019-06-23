@@ -41,17 +41,6 @@ var server = http.createServer(function(req, res) {
     // Log the request/response
     console.log("Request received with this payload: ", buffer);
   });
-
-  // Send the response
-  res.end("Hello World!\n");
-
-  // Log the request/response
-  console.log(
-    `Request received on path: ${trimmedPath}
-      with method: ${method}
-      and this query string: ${JSON.stringify(queryStringObject)}
-      Request received with these headers: ${JSON.stringify(headers)}`
-  );
 });
 
 // Start the server
