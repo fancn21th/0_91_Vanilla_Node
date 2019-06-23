@@ -61,7 +61,8 @@ var server = http.createServer(function(req, res) {
       payload = typeof payload == "object" ? payload : {};
 
       // Convert the payload to a string
-      var payloadString = JSON.stringify(payload);
+      // and format (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)
+      var payloadString = JSON.stringify(payload, null, "\t");
 
       // Return the response
       res.writeHead(statusCode);
