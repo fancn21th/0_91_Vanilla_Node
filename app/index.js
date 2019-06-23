@@ -35,7 +35,6 @@ var server = http.createServer(function(req, res) {
       and this query string: ${queryStringObject}
       Request received with these headers: ${headers}`
   );
-  console.log();
 });
 
 // Start the server
