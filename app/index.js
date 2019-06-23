@@ -9,6 +9,7 @@ var url = require("url");
 var StringDecoder = require("string_decoder").StringDecoder;
 var routers = require("./routers");
 var notfound = require("./routers/404");
+var config = require("./config");
 
 // Configure the server to respond to all requests with a string
 var server = http.createServer(function(req, res) {
@@ -61,10 +62,11 @@ var server = http.createServer(function(req, res) {
       payload = typeof payload == "object" ? payload : {};
 
       // Convert the payload to a string
-      // and format (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)
+      // with specific format (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)
       var payloadString = JSON.stringify(payload, null, "\t");
 
       // Return the response
+      res.setHeader("Content-Type", "application/json");
       res.writeHead(statusCode);
       res.end(payloadString);
       console.log("Returning this response: ", statusCode, payloadString);
@@ -73,6 +75,12 @@ var server = http.createServer(function(req, res) {
 });
 
 // Start the server
-server.listen(3000, function() {
-  console.log("The server is up and running now");
+server.listen(config.port, function() {
+  console.log(
+    "The server is up and running on port " +
+      config.port +
+      " in " +
+      config.envName +
+      " mode."
+  );
 });
