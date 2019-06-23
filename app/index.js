@@ -32,8 +32,8 @@ var server = http.createServer(function(req, res) {
   console.log(
     `Request received on path: ${trimmedPath}
       with method: ${method}
-      and this query string: ${queryStringObject}
-      Request received with these headers: ${headers}`
+      and this query string: ${JSON.stringify(queryStringObject)}
+      Request received with these headers: ${JSON.stringify(headers)}`
   );
 });
 
