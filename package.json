@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./app/index.js"
+    "start": "node ./app/index.js",
+    "prod": "NODE_ENV=production node ./app/index.js"
   },
   "repository": {
     "type": "git",
