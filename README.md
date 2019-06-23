@@ -1,4 +1,4 @@
-# A Vanilla Node Js Web Application
+# A Vanilla Node.js Web Application
 
 ## Steps
 
