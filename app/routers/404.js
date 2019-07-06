@@ -1,5 +1,5 @@
 const handler = (data, callback) => {
-  callback(404, data);
+  callback(404);
 };
 
 module.exports = handler;
