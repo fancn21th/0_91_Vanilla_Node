@@ -10,6 +10,11 @@ var StringDecoder = require("string_decoder").StringDecoder;
 var routers = require("./routers");
 var notfound = require("./routers/404");
 var config = require("./config");
+var _data = require("../lib/data");
+
+_data.create("test", "newFile", { fool: "bar" }, function(err) {
+  console.log("this is the error", err);
+});
 
 // Configure the server to respond to all requests with a string
 var server = http.createServer(function(req, res) {
